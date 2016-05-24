@@ -1,0 +1,69 @@
+<ion-view>
+    <ion-nav-bar class="bar-balanced has-tabs-top green">
+        <ion-nav-title>
+            Home
+        </ion-nav-title>
+    </ion-nav-bar>
+    <ion-content>
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon">
+                </i>
+                <input ng-model="searchValue" placeholder="Search" type="text">
+                </input>
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    brand
+                </div>
+                <select ng-model="chosenBrand">
+                    <option>
+                        Nokia
+                    </option>
+                    <option selected="">
+                        Samsung
+                    </option>
+                    <option>
+                        Apple
+                    </option>
+                    <option>
+                        Sony
+                    </option>
+                </select>
+            </label>
+        </div>
+        <div class="row header">
+            <div class="col table-colmun">
+                <h5>
+                    Brand
+                </h5>
+            </div>
+            <div class="col table-colmun">
+                <h5>
+                    Model
+                </h5>
+            </div>
+            <div class="col table-colmun">
+                <h5>
+                    Year
+                </h5>
+            </div>
+        </div>
+        <div class="row" ng-click="selectItem(mobile)" ng-repeat="mobile in mobilesArray |filter:searchValue">
+            <div class="col table-colmun">
+                {{mobile.brand}}
+            </div>
+            <div class="col table-colmun">
+                {{mobile.model}}
+            </div>
+            <div class="col table-colmun">
+                {{mobile.year}}
+            </div>
+        </div>
+        <div class="card" ng-show="itemIsChosen">
+            <div class="item item-text-wrap">
+                {{selectedMobile.info}}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
