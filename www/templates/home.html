@@ -49,7 +49,7 @@
                 </h5>
             </div>
         </div>
-        <div class="row" ng-click="selectItem(mobile)" ng-repeat="mobile in mobilesArray |filter:searchValue">
+        <div class="row" ng-repeat="mobile in mobilesArray |filter:searchValue" ng-click="selectItem(mobile, $index)" ng-class="{'selected':$index == selectedRow}">
             <div class="col table-colmun">
                 {{mobile.brand}}
             </div>

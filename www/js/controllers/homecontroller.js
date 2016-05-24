@@ -23,8 +23,10 @@ app.controller('HomeController', ['$scope', function($scope) {
 	}];
 
 	$scope.itemIsChosen = false;
-	$scope.selectItem = function(chosenMobile) {
+	$scope.selectedRow = null;
+	$scope.selectItem = function(chosenMobile, index) {
 		$scope.selectedMobile = chosenMobile;
+		$scope.selectedRow = index;
 		$scope.itemIsChosen = true;
 	}
 	console.log($scope.mobilesArray);

@@ -1,5 +1,13 @@
 /* Empty. Add your own CSS if you like */
 
 .table-colmun{
-	 border: solid 1px grey;
+	/* border: solid 1px grey;*/
+}
+
+.selected{
+	background-color: #DFDBDB;
+}
+
+.header{
+	
 }
