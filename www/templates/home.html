@@ -3,6 +3,11 @@
         <ion-nav-title>
             Home
         </ion-nav-title>
+        <ion-nav-buttons side="right">
+            <button class="button button-small button-clear" ng-click="addNewMobile()">
+                Add Mobile
+            </button>
+        </ion-nav-buttons>
     </ion-nav-bar>
     <ion-content>
         <div class="list list-inset">
@@ -23,7 +28,7 @@
                     <option value="Nokia">
                         Nokia
                     </option>
-                    <option value="Samsung" selected="">
+                    <option selected="" value="Samsung">
                         Samsung
                     </option>
                     <option value="Apple">
@@ -70,5 +75,7 @@
                 {{selectedMobile.info}}
             </div>
         </div>
+        
+
     </ion-content>
 </ion-view>
