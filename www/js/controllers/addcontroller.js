@@ -3,5 +3,10 @@ app.controller('AddController', ['$scope', function($scope) {
 	$scope.chosenBrand = 'Samsung';
 	// intialize the default value for memory
 	$scope.chosenMemory = '16GB';
-	
+	$scope.mobile = {};
+
+	$scope.addNewItem = function(){
+		console.log($scope.mobile);
+	}
+
 }])
