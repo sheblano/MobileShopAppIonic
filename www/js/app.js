@@ -22,7 +22,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
     }).state('add', { // the add model state 
       url: '/add',
       templateUrl: "templates/add.html",
+      cache: false,
       controller: 'AddController'
     });
-  $urlRouterProvider.otherwise('/add'); // the default state
+  $urlRouterProvider.otherwise('/home'); // the default state
 });

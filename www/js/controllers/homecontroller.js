@@ -1,35 +1,71 @@
 app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 	// mobile shop data
 	$scope.mobilesArray = [{
-		'brand': 'Nokia',
-		'model': '6600',
-		'year': '2005',
-		'info': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+		brand: 'Nokia',
+		model: '6600',
+		year: '2005',
+		screen: '4',
+		memory: '16GB',
+		options: {
+			dual: false,
+			fg: false,
+			nfc: false
+		},
+		color: 'white'
 	}, {
-		'brand': 'Samsung',
-		'model': 'S6',
-		'year': '2014',
-		'info': 'bbbbbbbbbb'
+		brand: 'Samsung',
+		model: 'S6',
+		year: '2014',
+		screen: '5',
+		memory: '16GB',
+		options: {
+			dual: true,
+			fg: true,
+			nfc: false
+		},
+		color: 'black'
 	}, {
-		'brand': 'Apple',
-		'model': 'iPhone4',
-		'year': '2006',
-		'info': 'cccccccccc'
+		brand: 'Apple',
+		model: 'iPhone4',
+		year: '2006',
+		screen: '4',
+		memory: '32GB',
+		options: {
+			dual: false,
+			fg: true,
+			nfc: false
+		},
+		color: 'white'
 	}, {
-		'brand': 'Sony',
-		'model': 'Z2',
-		'year': '2013',
-		'info': 'ddddddddddd'
+		brand: 'Sony',
+		model: 'Z2',
+		year: '2013',
+		screen: '4',
+		memory: '32GB',
+		options: {
+			dual: true,
+			fg: true,
+			nfc: true
+		},
+		color: 'black'
 	}, {
-		'brand': 'Apple',
-		'model': 'Z3',
-		'year': '2014',
-		'info': 'zzzzzzzzzzzz'
+		brand: 'Apple',
+		model: 'Z3',
+		year: '2014',
+		screen: '4',
+		memory: '64GB',
+		options: {
+			dual: false,
+			fg: true,
+			nfc: false
+		},
+		color: 'gold'
 	}];
-
-	// write the data array to the localStorage
-	localStorage.add('data', JSON.stringify($scope.mobilesArray));
-	
+	//check if there are previous data in the storage to load them
+	var chachedData = localStorage.getItem('data');
+	if (chachedData != null) {
+		$scope.mobilesArray = JSON.parse(chachedData);
+	}
 	// flag to check if item is clicked on the list
 	$scope.itemIsChosen = false;
 	// variable to hold the selected row index
@@ -39,24 +75,22 @@ app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 		$scope.selectedRow = index;
 		$scope.itemIsChosen = true;
 	}
-
 	$scope.addNewMobile = function() {
-		$state.go('add');
-	}
-
-	/**
-	 * charts part
-	 */
+			// write the mobiles data in the storage so we can modify them in another state
+			localStorage.setItem('data', JSON.stringify($scope.mobilesArray));
+			$state.go('add');
+		}
+		/**
+		 * charts part
+		 */
 	$scope.donut = {
 		options: {},
 		data: {}
 	};
-
 	$scope.bar = {
 		options: {},
 		data: {}
 	};
-
 	$scope.donut.options = {
 		chart: {
 			type: 'pieChart',
@@ -83,7 +117,6 @@ app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 			showLegend: false
 		}
 	};
-
 	$scope.donut.data = [{
 		brand: 'Nokia',
 		count: 10
@@ -97,7 +130,6 @@ app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 		brand: 'Sony',
 		count: 30
 	}];
-
 	/**
 	 * bar chart
 	 */
@@ -131,7 +163,6 @@ app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 			}
 		}
 	};
-
 	$scope.bar.data = [{
 		key: "Cumulative Return",
 		values: [{
@@ -148,6 +179,5 @@ app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 			"count": 500
 		}]
 	}];
-
 	console.log($scope.mobilesArray);
 }])

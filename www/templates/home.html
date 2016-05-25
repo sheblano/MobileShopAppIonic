@@ -58,7 +58,7 @@
                     </h5>
                 </div>
             </div>
-            <div class="row" ng-class="{'selected':$index == selectedRow}" ng-click="selectItem(mobile, $index)" ng-repeat="mobile in mobilesArray |filter:chosenBrand|filter:searchValue">
+            <div class="row" ng-class="{'selected':$index == selectedRow}" ng-click="selectItem(mobile, $index)" ng-repeat="mobile in mobilesArray |filter:chosenBrand|filter:searchValue track by $index">
                 <div class="col table-colmun">
                     {{mobile.brand}}
                 </div>
@@ -72,7 +72,11 @@
         </div>
         <div class="card" ng-show="itemIsChosen">
             <div class="item item-text-wrap">
-                {{selectedMobile.info}}
+               <p> {{selectedMobile.brand+" "+selectedMobile.model}} </p>
+                <p>Dual Sim: {{selectedMobile.options.dual == true ?'Yes':'No'}}, 4G: {{selectedMobile.options.fg == true ?'Yes':'No'}}, NFC: {{selectedMobile.options.nfc == true ?'Yes':'No'}}</p>
+                <p>Screen size: {{selectedMobile.screen}} inch</p>
+                <p>Storage: {{selectedMobile.memory}} inch</p>
+                <p>Color: {{selectedMobile.color}}</p>
             </div>
         </div>
 
