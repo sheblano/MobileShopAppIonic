@@ -29,3 +29,8 @@
 	position: absolute;
 	margin-left: 38%;
 }
+
+.options-label{
+	background-color: rgb(239, 241, 245);
+	height: 27px;
+}

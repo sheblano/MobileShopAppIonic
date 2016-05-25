@@ -7,6 +7,112 @@
         </ion-nav-title>
     </ion-nav-bar>
     <ion-content>
-         
+        <div>
+            <div class="list">
+                <label class="item item-input options-label">
+                    Primary
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">
+                        Model
+                    </span>
+                    <input placeholder="Samsung s6" type="text">
+                    </input>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">
+                        Manufacture Year
+                    </span>
+                    <input placeholder="2015" type="text">
+                    </input>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">
+                        Brand
+                    </span>
+                    <select ng-model="chosenBrand">
+                        <option value="Nokia">
+                            Nokia
+                        </option>
+                        <option value="Samsung">
+                            Samsung
+                        </option>
+                        <option value="Apple">
+                            Apple
+                        </option>
+                        <option value="Sony">
+                            Sony
+                        </option>
+                        <option value="LG">
+                            LG
+                        </option>
+                    </select>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">
+                        Memory
+                    </span>
+                    <select ng-model="chosenMemory">
+                        <option value="16GB">
+                            16GB
+                        </option>
+                        <option value="32GB">
+                            32GB
+                        </option>
+                        <option value="64GB">
+                            64GB
+                        </option>
+                        <option value="128GB">
+                            128GB
+                        </option>
+                    </select>
+                </label>
+                <label class="item item-input options-label">
+                    Options
+                </label>
+                <ion-list>
+                    <ion-checkbox ng-model="filter.blue">
+                        Dual Sim
+                    </ion-checkbox>
+                    <ion-checkbox ng-model="filter.yellow">
+                        NFC
+                    </ion-checkbox>
+                    <ion-checkbox ng-model="filter.pink">
+                        4G
+                    </ion-checkbox>
+                </ion-list>
+                <label class="item item-input options-label">
+                    Screen
+                </label>
+                <ion-list id="screens">
+                    <ion-radio ng-model="screenChoice" ng-value="4" name="group1">
+                        4"
+                    </ion-radio>
+                    <ion-radio ng-model="screenChoice" ng-value="5" name="group1">
+                        5"
+                    </ion-radio>
+                    <ion-radio ng-model="screenChoice" ng-value="6" name="group1">
+                        6"
+                    </ion-radio>
+                </ion-list>
+                <label class="item item-input options-label">
+                    Color
+                </label>
+                <ion-list id="colors">
+                    <ion-radio ng-model="colorChoice" ng-value="white" name="group2">
+                        white
+                    </ion-radio>
+                    <ion-radio ng-model="colorChoice" ng-value="black" name="group2">
+                        black
+                    </ion-radio>
+                    <ion-radio ng-model="colorChoice" ng-value="gold" name="group2">
+                        gold
+                    </ion-radio>
+                </ion-list>
+                <button class="button button-full button-assertive button-clear" ng-click="addNewItem()">
+                    Add Item
+                </button>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

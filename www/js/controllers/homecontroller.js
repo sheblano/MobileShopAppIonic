@@ -27,6 +27,9 @@ app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 		'info': 'zzzzzzzzzzzz'
 	}];
 
+	// write the data array to the localStorage
+	localStorage.add('data',JSON.stringify($scope.mobilesArray));
+	
 	// flag to check if item is clicked on the list
 	$scope.itemIsChosen = false;
 	// variable to hold the selected row index
@@ -60,10 +63,10 @@ app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 			height: 200,
 			donut: true,
 			x: function(d) {
-				return d.key;
+				return d.brand;
 			},
 			y: function(d) {
-				return d.y;
+				return d.count;
 			},
 			showLabels: true,
 			duration: 500,
@@ -82,23 +85,23 @@ app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 	};
 
 	$scope.donut.data = [{
-		key: 'Nokia',
-		y: 10
+		brand: 'Nokia',
+		count: 10
 	}, {
-		key: 'Samsung',
-		y: 15
+		brand: 'Samsung',
+		count: 15
 	}, {
-		key: 'Apple',
-		y: 20
+		brand: 'Apple',
+		count: 20
 	}, {
-		key: 'Sony',
-		y: 30
+		brand: 'Sony',
+		count: 30
 	}];
 
 	/**
 	 * bar chart
 	 */
-	 $scope.bar.options = {
+	$scope.bar.options = {
 		chart: {
 			type: 'discreteBarChart',
 			height: 200,

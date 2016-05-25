@@ -24,5 +24,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "templates/add.html",
       controller: 'AddController'
     });
-  $urlRouterProvider.otherwise('/home'); // the default state
+  $urlRouterProvider.otherwise('/add'); // the default state
 });
