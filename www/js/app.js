@@ -1,4 +1,4 @@
-var app = angular.module('myapp', ['ionic'])
+var app = angular.module('myapp', ['ionic','nvd3'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

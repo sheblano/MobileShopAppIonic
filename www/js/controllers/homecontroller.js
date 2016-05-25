@@ -1,4 +1,4 @@
-app.controller('HomeController', ['$scope', function($scope) {
+app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 	// mobile shop data
 	$scope.mobilesArray = [{
 		'brand': 'Nokia',
@@ -36,5 +36,115 @@ app.controller('HomeController', ['$scope', function($scope) {
 		$scope.selectedRow = index;
 		$scope.itemIsChosen = true;
 	}
+
+	$scope.addNewMobile = function() {
+		$state.go('add');
+	}
+
+	/**
+	 * charts part
+	 */
+	$scope.donut = {
+		options: {},
+		data: {}
+	};
+
+	$scope.bar = {
+		options: {},
+		data: {}
+	};
+
+	$scope.donut.options = {
+		chart: {
+			type: 'pieChart',
+			height: 200,
+			donut: true,
+			x: function(d) {
+				return d.key;
+			},
+			y: function(d) {
+				return d.y;
+			},
+			showLabels: true,
+			duration: 500,
+			labelThreshold: 0.01,
+			labelSunbeamLayout: true,
+			legend: {
+				margin: {
+					top: 5,
+					right: 200,
+					bottom: 5,
+					left: 0
+				}
+			},
+			showLegend: false
+		}
+	};
+
+	$scope.donut.data = [{
+		key: 'Nokia',
+		y: 10
+	}, {
+		key: 'Samsung',
+		y: 15
+	}, {
+		key: 'Apple',
+		y: 20
+	}, {
+		key: 'Sony',
+		y: 30
+	}];
+
+	/**
+	 * bar chart
+	 */
+	 $scope.bar.options = {
+		chart: {
+			type: 'discreteBarChart',
+			height: 200,
+			margin: {
+				top: 20,
+				right: 20,
+				bottom: 50,
+				left: 55
+			},
+			x: function(d) {
+				return d.year;
+			},
+			y: function(d) {
+				return d.count;
+			},
+			showValues: true,
+			valueFormat: function(d) {
+				return d3.format(',.4f')(d);
+			},
+			duration: 500,
+			xAxis: {
+				axisLabel: 'Manufacture Year'
+			},
+			yAxis: {
+				axisLabel: '',
+				axisLabelDistance: -10
+			}
+		}
+	};
+
+	$scope.bar.data = [{
+		key: "Cumulative Return",
+		values: [{
+			"year": "2012",
+			"count": 200
+		}, {
+			"year": "2013",
+			"count": 310
+		}, {
+			"year": "2014",
+			"count": 210
+		}, {
+			"year": "2015",
+			"count": 500
+		}]
+	}];
+
 	console.log($scope.mobilesArray);
 }])

@@ -19,3 +19,13 @@
 	/*border: outset green;*/
 	background-color: transparent;
 }
+
+.donut-chart{
+    position: absolute;
+    margin-left: -20%;
+}
+
+.bar-chart{
+	position: absolute;
+	margin-left: 38%;
+}
