@@ -20,9 +20,16 @@ app.controller('HomeController', ['$scope', function($scope) {
 		'model': 'Z2',
 		'year': '2013',
 		'info': 'ddddddddddd'
+	}, {
+		'brand': 'Apple',
+		'model': 'Z3',
+		'year': '2014',
+		'info': 'zzzzzzzzzzzz'
 	}];
 
+	// flag to check if item is clicked on the list
 	$scope.itemIsChosen = false;
+	// variable to hold the selected row index
 	$scope.selectedRow = null;
 	$scope.selectItem = function(chosenMobile, index) {
 		$scope.selectedMobile = chosenMobile;

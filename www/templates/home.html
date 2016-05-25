@@ -17,47 +17,52 @@
                     brand
                 </div>
                 <select ng-model="chosenBrand">
-                    <option>
+                    <option value="">
+                        --
+                    </option>
+                    <option value="Nokia">
                         Nokia
                     </option>
-                    <option selected="">
+                    <option value="Samsung" selected="">
                         Samsung
                     </option>
-                    <option>
+                    <option value="Apple">
                         Apple
                     </option>
-                    <option>
+                    <option value="Sony">
                         Sony
                     </option>
                 </select>
             </label>
         </div>
-        <div class="row header">
-            <div class="col table-colmun">
-                <h5>
-                    Brand
-                </h5>
+        <div class="models-table">
+            <div class="row header">
+                <div class="col table-colmun">
+                    <h5>
+                        Brand
+                    </h5>
+                </div>
+                <div class="col table-colmun">
+                    <h5>
+                        Model
+                    </h5>
+                </div>
+                <div class="col table-colmun">
+                    <h5>
+                        Year
+                    </h5>
+                </div>
             </div>
-            <div class="col table-colmun">
-                <h5>
-                    Model
-                </h5>
-            </div>
-            <div class="col table-colmun">
-                <h5>
-                    Year
-                </h5>
-            </div>
-        </div>
-        <div class="row" ng-repeat="mobile in mobilesArray |filter:searchValue" ng-click="selectItem(mobile, $index)" ng-class="{'selected':$index == selectedRow}">
-            <div class="col table-colmun">
-                {{mobile.brand}}
-            </div>
-            <div class="col table-colmun">
-                {{mobile.model}}
-            </div>
-            <div class="col table-colmun">
-                {{mobile.year}}
+            <div class="row" ng-class="{'selected':$index == selectedRow}" ng-click="selectItem(mobile, $index)" ng-repeat="mobile in mobilesArray |filter:chosenBrand|filter:searchValue">
+                <div class="col table-colmun">
+                    {{mobile.brand}}
+                </div>
+                <div class="col table-colmun">
+                    {{mobile.model}}
+                </div>
+                <div class="col table-colmun">
+                    {{mobile.year}}
+                </div>
             </div>
         </div>
         <div class="card" ng-show="itemIsChosen">

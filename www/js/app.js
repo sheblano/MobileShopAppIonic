@@ -19,10 +19,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "templates/home.html",
       cache: false,
       controller: 'HomeController'
-    }).state('add', {   // the add model state 
+    }).state('add', { // the add model state 
       url: '/add',
       templateUrl: "templates/add.html",
       controller: 'AddController'
     });
-  $urlRouterProvider.otherwise('/home');  // the default state
+  $urlRouterProvider.otherwise('/home'); // the default state
 });
