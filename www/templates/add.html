@@ -30,7 +30,7 @@
                     <span class="input-label">
                         Brand
                     </span>
-                    <select ng-model="mobile.chosenBrand">
+                    <select ng-model="mobile.brand">
                         <option value="Nokia">
                             Nokia
                         </option>
@@ -52,7 +52,7 @@
                     <span class="input-label">
                         Memory
                     </span>
-                    <select ng-model="mobile.chosenMemory">
+                    <select ng-model="mobile.memory">
                         <option value="16GB">
                             16GB
                         </option>
@@ -84,30 +84,31 @@
                 <label class="item item-input options-label">
                     Screen
                 </label>
-                <ion-list id="screens">
-                    <ion-radio name="group1" ng-model="mobile.screenChoice" ng-value="4">
+                <ion-list>
+                    <ion-radio name="group1" ng-model="mobile.screen" ng-value="4">
                         4"
                     </ion-radio>
-                    <ion-radio name="group1" ng-model="mobile.screenChoice" ng-value="5">
+                    <ion-radio name="group1" ng-model="mobile.screen" ng-value="5">
                         5"
                     </ion-radio>
-                    <ion-radio name="group1" ng-model="mobile.screenChoice" ng-value="6">
+                    <ion-radio name="group1" ng-model="mobile.screen" ng-value="6">
                         6"
                     </ion-radio>
                 </ion-list>
                 <label class="item item-input options-label">
                     Color
                 </label>
-                <ion-list id="colors">
-                    <ion-radio name="group2" ng-model="mobile.colorChoice" ng-value="white">
+                <ion-list>
+                    <ion-radio  ng-model="mobile.color" ng-value="white">
                         white
                     </ion-radio>
-                    <ion-radio name="group2" ng-model="mobile.colorChoice" ng-value="black">
+                    <ion-radio  ng-model="mobile.color" ng-value="black">
                         black
                     </ion-radio>
-                    <ion-radio name="group2" ng-model="mobile.colorChoice" ng-value="gold">
+                    <ion-radio  ng-model="mobile.color" ng-value="gold">
                         gold
                     </ion-radio>
+                    {{mobile.color}}
                 </ion-list>
                 <button class="button button-full button-assertive button-clear" ng-click="addNewItem()">
                     Add Item

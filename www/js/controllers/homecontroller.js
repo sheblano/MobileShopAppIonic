@@ -28,7 +28,7 @@ app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 	}];
 
 	// write the data array to the localStorage
-	localStorage.add('data',JSON.stringify($scope.mobilesArray));
+	localStorage.add('data', JSON.stringify($scope.mobilesArray));
 	
 	// flag to check if item is clicked on the list
 	$scope.itemIsChosen = false;

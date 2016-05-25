@@ -5,8 +5,9 @@ app.controller('AddController', ['$scope', function($scope) {
 	$scope.chosenMemory = '16GB';
 	$scope.mobile = {};
 
-	$scope.addNewItem = function(){
+	$scope.addNewItem = function() {
 		console.log($scope.mobile);
+		localStorage.setItem('addedItem', JSON.stringify($scope.mobile));
 	}
 
 }])
