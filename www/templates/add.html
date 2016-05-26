@@ -95,21 +95,21 @@
                         6"
                     </ion-radio>
                 </ion-list>
-                <label class="item item-input options-label">
+                 <label class="item item-input options-label">
                     Color
                 </label>
                 <ion-list>
-                    <ion-radio  ng-model="mobile.color" ng-value="white">
+                    <ion-radio name="group2" ng-model="mobile.color" ng-value="white">
                         white
                     </ion-radio>
-                    <ion-radio  ng-model="mobile.color" ng-value="black">
+                    <ion-radio name="group2" ng-model="mobile.color" ng-value="black">
                         black
                     </ion-radio>
-                    <ion-radio  ng-model="mobile.color" ng-value="gold">
+                    <ion-radio name="group2" ng-model="mobile.color" ng-value="gold">
                         gold
                     </ion-radio>
-                    {{mobile.color}}
                 </ion-list>
+					
                 <button class="button button-full button-assertive button-clear" ng-click="addNewItem()">
                     Add Item
                 </button>
