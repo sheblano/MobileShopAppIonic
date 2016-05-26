@@ -1,5 +1,5 @@
 <ion-view>
-    <ion-nav-bar class="bar-balanced has-tabs-top green">
+    <ion-nav-bar class="bar-dark has-tabs-top green">
         <ion-nav-title>
             Home
         </ion-nav-title>
@@ -9,19 +9,19 @@
             </button>
         </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-content>
-        <div class="list list-inset">
-            <label class="item item-input">
+    <ion-content class="home-page">
+        <div class="list list-inset transparent">
+            <label class="item item-input transparent">
                 <i class="icon ion-search placeholder-icon">
                 </i>
                 <input ng-model="searchValue" placeholder="Search" type="text">
                 </input>
             </label>
-            <label class="item item-input item-select">
+            <label class="item item-input item-select transparent">
                 <div class="input-label">
-                    brand
+                    <p>Brand</p>
                 </div>
-                <select ng-model="chosenBrand">
+                <select class="transparent" ng-model="chosenBrand">
                     <option value="">
                         --
                     </option>

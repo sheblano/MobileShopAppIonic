@@ -50,7 +50,7 @@ app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 		color: 'black'
 	}, {
 		brand: 'Apple',
-		model: 'Z3',
+		model: 'iPhone5',
 		year: '2014',
 		screen: '4',
 		memory: '64GB',
@@ -154,7 +154,7 @@ app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 			},
 			showValues: true,
 			valueFormat: function(d) {
-				return d3.format(',.4f')(d);
+				return d;
 			},
 			duration: 500,
 			xAxis: {

@@ -1,19 +1,19 @@
 <ion-view>
-    <ion-nav-bar class="bar-balanced has-tabs-top green">
+    <ion-nav-bar class="bar-dark has-tabs-top green">
         <ion-nav-back-button>
         </ion-nav-back-button>
         <ion-nav-title>
             Add
         </ion-nav-title>
     </ion-nav-bar>
-    <ion-content>
-        <div>
-            <div class="list">
+    <ion-content class="home-page">
+        <div class="transparent">
+            <div class="list transparent">
                 <label class="item item-input options-label">
                     Primary
                 </label>
                 
-                <label class="item item-input">
+                <label class="item item-input transparent">
                     <span class="input-label">
                         Model
                     </span>
@@ -23,7 +23,7 @@
                  <div class='error-span' ng-show="modelRequiredErr">
                 	<p>Model is required</p>
                 </div>
-                <label class="item item-input">
+                <label class="item item-input transparent">
                     <span class="input-label">
                         Manufacture Year
                     </span>
@@ -34,11 +34,11 @@
                 	<p>Manufacture is required</p>
                 </div>
 
-                <label class="item item-input">
+                <label class="item item-input transparent">
                     <span class="input-label">
                         Brand
                     </span>
-                    <select ng-model="mobile.brand">
+                    <select class="transparent" ng-model="mobile.brand">
                         <option value="Nokia">
                             Nokia
                         </option>
@@ -56,11 +56,11 @@
                         </option>
                     </select>
                 </label>
-                <label class="item item-input">
+                <label class="item item-input transparent">
                     <span class="input-label">
                         Memory
                     </span>
-                    <select ng-model="mobile.memory">
+                    <select class="transparent" ng-model="mobile.memory">
                         <option value="16GB">
                             16GB
                         </option>
@@ -78,22 +78,22 @@
                 <label class="item item-input options-label">
                     Options
                 </label>
-                <ion-list>
-                    <ion-checkbox ng-model="mobile.options.dual">
+                <ion-list class="transparent">
+                    <ion-checkbox class="transparent" ng-model="mobile.options.dual">
                         Dual Sim
                     </ion-checkbox>
-                    <ion-checkbox ng-model="mobile.options.nfc">
+                    <ion-checkbox class="transparent" ng-model="mobile.options.nfc">
                         NFC
                     </ion-checkbox>
-                    <ion-checkbox ng-model="mobile.options.fg">
+                    <ion-checkbox class="transparent" ng-model="mobile.options.fg">
                         4G
                     </ion-checkbox>
                 </ion-list>
                 <label class="item item-input options-label">
                     Screen
                 </label>
-                <ion-list>
-                    <ion-radio name="group1" ng-model="mobile.screen" ng-value="4">
+                <ion-list class="transparent">
+                    <ion-radio class="item item-radio" ng-style="{'background-color': 'blue'}" name="group1" ng-model="mobile.screen" ng-value="4">
                         4"
                     </ion-radio>
                     <ion-radio name="group1" ng-model="mobile.screen" ng-value="5">
@@ -118,7 +118,7 @@
                     </ion-radio>
                 </ion-list>
 					
-                <button class="button button-full button-assertive button-clear" ng-click="addNewItem()">
+                <button class="button button-full add-button button-clear" ng-click="addNewItem()">
                     Add Item
                 </button>
             </div>

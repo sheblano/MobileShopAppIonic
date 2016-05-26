@@ -12,6 +12,33 @@
 	
 }
 
+.home-page{
+	background-image: url("../img/img4.jpg");
+	/*background-color: grey;*/
+	/*color:white;*/
+}
+
+.transparent{
+	background: transparent!important;
+}
+
+/*
+	this part for overriding the ion-radio design
+ */
+.list .item-radio input:checked ~ .item-content, .list .item-radio .item-content    {
+  background-color:#E6EBEF;
+  color: black;
+}
+
+.list .item-radio .radio-icon    {
+  color: black;
+}
+
+.add-button{
+	color: black!important;
+    font-size: x-large;
+}
+
 .models-table{
 	width: 80%;
 	margin-left: auto;
