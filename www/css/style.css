@@ -34,3 +34,8 @@
 	background-color: rgb(239, 241, 245);
 	height: 27px;
 }
+
+.error-span{
+	color: red;
+	margin-left: 5%;
+}

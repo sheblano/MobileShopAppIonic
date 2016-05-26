@@ -66,17 +66,20 @@ app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 	if (chachedData != null) {
 		$scope.mobilesArray = JSON.parse(chachedData);
 	}
-	// flag to check if item is clicked on the list
+	// flag to check if item is clicked on the list to show its info below
 	$scope.itemIsChosen = false;
 	// variable to hold the selected row index
 	$scope.selectedRow = null;
 	$scope.selectItem = function(chosenMobile, index) {
-		$scope.selectedMobile = chosenMobile;
-		$scope.selectedRow = index;
-		$scope.itemIsChosen = true;
-	}
+			$scope.selectedMobile = chosenMobile;
+			$scope.selectedRow = index;
+			$scope.itemIsChosen = true;
+		}
+		/**
+		 * when press add new mobile button
+		 */
 	$scope.addNewMobile = function() {
-			// write the mobiles data in the storage so we can modify them in another state
+			// write the mobiles data in the local storage so we can modify them in another state
 			localStorage.setItem('data', JSON.stringify($scope.mobilesArray));
 			$state.go('add');
 		}
@@ -179,5 +182,4 @@ app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 			"count": 500
 		}]
 	}];
-	console.log($scope.mobilesArray);
 }])

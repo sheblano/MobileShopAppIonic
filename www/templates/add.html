@@ -12,20 +12,28 @@
                 <label class="item item-input options-label">
                     Primary
                 </label>
+                
                 <label class="item item-input">
                     <span class="input-label">
                         Model
                     </span>
-                    <input ng-model="mobile.model" placeholder="Samsung s6" type="text">
+                    <input ng-model="mobile.model" placeholder="Samsung s6" type="text" ng-change="isTypingValue()">
                     </input>
                 </label>
+                 <div class='error-span' ng-show="modelRequiredErr">
+                	<p>Model is required</p>
+                </div>
                 <label class="item item-input">
                     <span class="input-label">
                         Manufacture Year
                     </span>
-                    <input ng-model="mobile.year" placeholder="2015" type="text">
+                    <input ng-model="mobile.year" placeholder="2015" type="text" ng-change="isTypingValue()">
                     </input>
                 </label>
+                <div class='error-span' ng-show="yearRequiredErr">
+                	<p>Manufacture is required</p>
+                </div>
+
                 <label class="item item-input">
                     <span class="input-label">
                         Brand
