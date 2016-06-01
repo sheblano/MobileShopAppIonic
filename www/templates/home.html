@@ -58,7 +58,7 @@
                     </h5>
                 </div>
             </div>
-            <div class="row" ng-class="{'selected':$index == selectedRow}" ng-click="selectItem(mobile, $index)" ng-repeat="mobile in mobilesArray |filter:chosenBrand|filter:searchValue track by $index">
+            <div class="row" ng-class="{'selected':$index == selectedRow}" ng-click="selectItem(mobile, $index)" ng-repeat="mobile in $parent.filterdMobiles = (mobilesArray |filter:chosenBrand|filter:searchValue) track by $index">
                 <div class="col table-colmun">
                     {{mobile.brand}}
                 </div>
@@ -69,6 +69,10 @@
                     {{mobile.year}}
                 </div>
             </div>
+           <p ng-hide="$parent.filterdMobiles.length">There is no result</p>
+              <label> Number of filtered mobiles: {{$parent.filterdMobiles.length}} </label>
+           <!--  <button ng-click="seeFilterd()">see filterd</button> -->
+
         </div>
         <div class="card" ng-show="itemIsChosen">
             <div class="item item-text-wrap">

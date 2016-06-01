@@ -1,5 +1,6 @@
 app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 	// mobile shop data
+	$scope.filterdMobiles = [];
 	$scope.mobilesArray = [{
 		brand: 'Nokia',
 		model: '6600',
@@ -61,6 +62,33 @@ app.controller('HomeController', ['$scope', '$state', function($scope, $state) {
 		},
 		color: 'gold'
 	}];
+
+	$scope.seeFilterd = function() {
+		console.log($scope.filterdMobiles);
+	}
+
+	$scope.redrawTheGraph = function(filterdMobilesData) {
+		// modify and filter $scope.donut.data  & $scope.bar.data accordingly
+		
+	}
+
+	// i used normal interval as $watch did not work as expected
+	// save the filtered array in filterdMobiles
+	// variable which carry the last length of the filtered array for not redrawing the graph every second
+	$scope.lastFilterdLengthDrawn = $scope.mobilesArray.length;
+	setInterval(function() {
+		// filter applied which changed the list length
+		if ($scope.filterdMobiles.length != $scope.mobilesArray.length && $scope.filterdMobiles.length != $scope.lastFilterdLengthDrawn) {
+			console.log($scope.filterdMobiles);
+			$scope.lastFilterdLengthDrawn = $scope.filterdMobiles.length;
+			$scope.redrawTheGraph($scope.filterdMobiles);
+			// refreshing the data while removing applied filter to redraw agian
+		} else if ($scope.filterdMobiles.length == $scope.mobilesArray.length && $scope.filterdMobiles.length > $scope.lastFilterdLengthDrawn) {
+			console.log($scope.filterdMobiles);
+			$scope.lastFilterdLengthDrawn = $scope.filterdMobiles.length;
+			$scope.redrawTheGraph($scope.filterdMobiles);
+		}
+	}, 1000);
 	//check if there are previous data in the storage to load them
 	var chachedData = localStorage.getItem('data');
 	if (chachedData != null) {
